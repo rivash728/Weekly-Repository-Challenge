@@ -8,19 +8,33 @@ def changeMaker():
     print("======= Changemaker.py =======");
     print("Welcome to the Change Maker Program!");
     print("We shall convert your change!");
-    change = float(input("Please input money you have! 0-99: "));
+    amount_due = float(input("Please input money due: "));
+    change = float(input("Please input change given: "));
+    
 
-    #Calculations
-    quarters = change // 25;
+    #Calculate The Difference
+    amount_due = int(amount_due);
+    change = int(change);
+    difference = change - amount_due;
+    u = float(difference);
+
+    #Quarter calculation
+    quarters = u // .25;
     round(quarters);
-    change = change % 25;
-    dimes = change // 10;
+    u = u % 0.25;
+
+    #Dime calculation
+    dimes = u // .10;
     round(dimes);
-    change = change % 10;
-    nickles = change // 5;
+    u = u % .10;
+
+    #Nickle Calculation
+    nickles = u // .5;
     round(nickles);
-    change = change % 5;
-    pennies = change // 1;
+    u = u % .5;
+
+    #Penny Calculation
+    pennies = u // .01;
     round(pennies);
 
     # Print out results to the user.
